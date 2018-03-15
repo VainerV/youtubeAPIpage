@@ -2,3 +2,60 @@
   box-sizing: border-box;
 }
 
+.grid-container {
+  display: grid;
+}
+
+.text-logo {
+ text-align: center;
+ color: brown;
+ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+ font-style: italic;
+ 
+
+}
+#logo {
+margin-top: 10px;
+padding: 10px;
+
+}
+
+.search-text-field {
+ width: 500px;
+ height: auto;
+ font-size: 18px;
+ margin-left: 20px;
+ 
+}
+
+.search-button {
+width: 200px;
+height: auto;
+font-size: 18px;
+font-style: bold;
+border-radius: 12px;
+margin-left: 10px;
+
+}
+.search-result-logo {
+margin-left: 15px;
+
+}
+
+.main-container {
+  margin-left: 20%;
+  margin-right: 20%;
+  background-color: lightskyblue;
+
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: lightgreen;
+  color: red;
+  
+}
+
+header{
+  display: inline;
+}
