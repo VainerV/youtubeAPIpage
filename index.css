@@ -8,12 +8,13 @@
 
 .text-logo {
  text-align: center;
- color: brown;
+ color: white;
+ text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ /*color:#FC4A1A;*/
  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
  font-style: italic;
- 
-
 }
+
 #logo {
 margin-top: 10px;
 padding: 10px;
@@ -37,20 +38,23 @@ height: auto;
 font-size: 16px;
 font-style: bold;
 border-radius: 12px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .input-fields {
 display: inline;
 }
-.search-result-logo {
-margin-left: 15px;
 
+.search-result-logo {
+ margin-left: 25px;
+ text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+ color:white;
 }
 
 .main-container {
   margin-left: 20%;
   margin-right: 20%;
-  background-color: lightskyblue;
+  background-color:  #4ABDAC;
 
 }
 
@@ -59,6 +63,9 @@ button:hover {
   background-color: lightgreen;
   color: red;
   
+}
+button {
+background-color: yellow;
 }
 
 header{
