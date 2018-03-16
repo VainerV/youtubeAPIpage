@@ -8,18 +8,28 @@
   <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
     crossorigin="anonymous"></script>
   <link href="index.css" rel="stylesheet" type="text/css" />
+  <link href="grid.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
   <main role="main" class="main-container">
-    <div class="text-logo">
+    <div class="text-logo ">
        <h1 id="logo">Youtube Mega Search</h1>
    </div>
    <div class="submit-form">
-    <form class="js-search-form">
+    <form class="js-search-form ">
       <label for="query"></label>
-      <input type="text" class="search-text-field" placeholder="Search Criteria" />
-      <button type="submit" class="search-button">Search</button>
+
+      <div class="row">
+
+         <div class="col-12 input-fields">
+         <input type="text" class="search-text-field" placeholder="Search Criteria" />
+         </div>
+         <div class="col-12 input-fields"></div>
+         <button type="submit" class="search-button">Search</button>
+        </div>
+
+      </div>
      </form>
     </div>
     

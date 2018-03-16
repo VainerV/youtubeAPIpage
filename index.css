@@ -21,21 +21,26 @@ padding: 10px;
 }
 
 .search-text-field {
- width: 500px;
+ width: 65%;
+ min-width: 200px;
  height: auto;
  font-size: 18px;
- margin-left: 20px;
+ 
  
 }
 
 .search-button {
-width: 200px;
+width: 30%;
+min-width: 100px;;
+align-self: right;
 height: auto;
-font-size: 18px;
+font-size: 16px;
 font-style: bold;
 border-radius: 12px;
-margin-left: 10px;
+}
 
+.input-fields {
+display: inline;
 }
 .search-result-logo {
 margin-left: 15px;
