@@ -32,7 +32,7 @@ function getDataFromApi(searchTerm, callback) {
       key: 'AIzaSyDFTWYdlQDBnJkoLoucEOBenpdnNCYy3wA',
       part: 'snippet',
       fields: 'items(snippet(thumbnails),id)' , 
-      per_page: 6
+      maxResults: 6,
     }
     $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   }
@@ -40,13 +40,13 @@ function getDataFromApi(searchTerm, callback) {
 // function that show 6 images(thumbs) of the videos
 function showSearchResults(){
     let filterdResult = result.items.map(function (data){
-        return `<img src="${data.snippet.thumbnails.default.url}" />`
+        return  `<img src="${data.snippet.thumbnails.default.url}"/>` + `<a href="http://www.youtube.com/watch?v=${data.id.videoId}" />`
     })
     
 
     $(".js-search-results").html(filterdResult);
  }
-// ['<img src ="" />, <img src ="", <img src ="" ]
+
 
 
 

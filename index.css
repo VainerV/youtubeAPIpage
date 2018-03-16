@@ -51,6 +51,26 @@ display: inline;
  color:white;
 }
 
+#thumbnails-style{
+display: inline-block;
+margin-left: 20px;
+margin-bottom: 30px;
+
+}
+
+
+img:hover{
+  background-color: steelblue;
+}
+
+img{
+  border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+    width: 120px;
+  
+}
+
 .main-container {
   margin-left: 20%;
   margin-right: 20%;
