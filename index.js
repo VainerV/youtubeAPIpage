@@ -20,8 +20,11 @@ $('.js-search-form').on('submit', function(event){
 
   /*load next batch
   $('#load-more-videos').on('click', function(event){
-    showSearchResults();
-    page++;
+      let searchRequest  = $(".search-text-field").val();
+       getDataFromApi(searchRequest, function (data){
+       result = data;
+       showSearchResults();
+       page++;
   }) */
 
 // function that pulls search results. submits search request
