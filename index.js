@@ -37,13 +37,13 @@ function getDataFromApi(searchTerm, callback) {
     $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   }
  
-// function that show 6 images(thumbs) of the videos
+// function that retrever url of 6 images(thumbs) of the videos linked to the video it self.
 function showSearchResults(){
     let filterdResult = result.items.map(function (data){
-        return  `<img src="${data.snippet.thumbnails.default.url}"/>` + `<a href="http://www.youtube.com/watch?v=${data.id.videoId}" />`
+       // return  `<img src="${data.snippet.thumbnails.default.url}"/>` + `<a href="http://www.youtube.com/watch?v=${data.id.videoId}" />`
+   
+        return `<a href="http://www.youtube.com/watch?v=${data.id.videoId}"><img src="${data.snippet.thumbnails.default.url}"/><a>`
     })
-    
-
     $(".js-search-results").html(filterdResult);
  }
 
