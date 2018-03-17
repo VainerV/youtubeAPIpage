@@ -91,3 +91,22 @@ background-color: yellow;
 header{
   display: inline;
 }
+
+#load-more-videos{
+width: 20%;
+min-width: 100px;
+margin-bottom: 35px;
+display: inline;
+height: auto;
+font-size: 16px;
+font-style: bold;
+border-radius: 12px;
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+margin-left: 40%;
+margin-right: 40%;
+}
+
+#l-more-b{
+align-content: center;
+
+}

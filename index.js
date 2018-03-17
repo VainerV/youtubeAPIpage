@@ -2,30 +2,29 @@
 
 // create responsive page that loads to all screen sizes.
 // Page contain Plage Logo, text field, submit (search) button,area that will
-//   show search results and video player.
+//   show search results
 
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 let result;
-// Create JS form taht accepts request.
-//   form will contain lable, text field, submit button.
-
-// Reset default form behavior
+//let page = 1;
+// Reset default form behavior & calls show result
 $('.js-search-form').on('submit', function(event){
     event.preventDefault();
     let searchRequest  = $(".search-text-field").val();
-  getDataFromApi(searchRequest, function (data){
-      result = data;
-      showSearchResults();
+    getDataFromApi(searchRequest, function (data){
+       result = data;
+       showSearchResults();
    } )
    
   });
 
-// function that accepts and submits search request 
+  /*load next batch
+  $('#load-more-videos').on('click', function(event){
+    showSearchResults();
+    page++;
+  }) */
 
-
-
-
-// function that pulls search results.
+// function that pulls search results. submits search request
 function getDataFromApi(searchTerm, callback) {
     const query = {
       q: searchTerm,
@@ -33,6 +32,7 @@ function getDataFromApi(searchTerm, callback) {
       part: 'snippet',
       fields: 'items(snippet(thumbnails),id)' , 
       maxResults: 6,
+         // pageToken: page,
     }
     $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   }
@@ -40,18 +40,8 @@ function getDataFromApi(searchTerm, callback) {
 // function that retrever url of 6 images(thumbs) of the videos linked to the video it self.
 function showSearchResults(){
     let filterdResult = result.items.map(function (data){
-       // return  `<img src="${data.snippet.thumbnails.default.url}"/>` + `<a href="http://www.youtube.com/watch?v=${data.id.videoId}" />`
-   
         return `<a href="http://www.youtube.com/watch?v=${data.id.videoId}"><img src="${data.snippet.thumbnails.default.url}"/><a>`
     })
     $(".js-search-results").html(filterdResult);
  }
-
-
-
-
-// function that activates each thumb-image 
-
-
-
-// function that clears the page. 
+ 
