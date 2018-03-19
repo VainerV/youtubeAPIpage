@@ -6,36 +6,39 @@
 
 const YOUTUBE_SEARCH_URL = 'https://www.googleapis.com/youtube/v3/search';
 let result;
-//let page = 1;
+ let page; // used in load next page
 // Reset default form behavior & calls show result
 $('.js-search-form').on('submit', function(event){
     event.preventDefault();
     let searchRequest  = $(".search-text-field").val();
     getDataFromApi(searchRequest, function (data){
-       result = data;
-       showSearchResults();
+   result = data;
+    showSearchResults();
+    page = result.nextPageToken;
    } )
    
   });
 
-  /*load next batch
+  //load next batch  (NOT WORKINg)
   $('#load-more-videos').on('click', function(event){
       let searchRequest  = $(".search-text-field").val();
        getDataFromApi(searchRequest, function (data){
        result = data;
        showSearchResults();
-       page++;
-  }) */
-
+       page = result.nextPageToken;
+      
+  }) 
+  });
 // function that pulls search results. submits search request
 function getDataFromApi(searchTerm, callback) {
+    console.log(page);
     const query = {
       q: searchTerm,
       key: 'AIzaSyDFTWYdlQDBnJkoLoucEOBenpdnNCYy3wA',
       part: 'snippet',
-      fields: 'items(snippet(thumbnails),id)' , 
+      fields: 'nextPageToken,items(snippet(thumbnails),id)' , 
       maxResults: 6,
-         // pageToken: page,
+      pageToken: page,
     }
     $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
   }
@@ -47,4 +50,4 @@ function showSearchResults(){
     })
     $(".js-search-results").html(filterdResult);
  }
- 
+
