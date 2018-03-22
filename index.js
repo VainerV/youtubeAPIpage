@@ -40,7 +40,8 @@ function getDataFromApi(searchTerm, callback) {
       maxResults: 6,
       pageToken: page,
     }
-    $.getJSON(YOUTUBE_SEARCH_URL, query, callback);
+    $.getJSON(YOUTUBE_SEARCH_URL, query, callback)
+    .fail(showErr);
   }
  
 // function that retrever url of 6 images(thumbs) of the videos linked to the video it self.
@@ -48,6 +49,6 @@ function showSearchResults(){
     let filterdResult = result.items.map(function (data){
         return `<a href="http://www.youtube.com/watch?v=${data.id.videoId}"><img src="${data.snippet.thumbnails.default.url}"/><a>`
     })
-    $(".js-search-results").html(filterdResult);
+    $(".js-search-results").prop('hidden', false).html(filterdResult);
  }
 
